@@ -1,0 +1,125 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+/* Background with a dark futuristic theme */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: radial-gradient(circle at center, #111, #000);
+    color: white;
+}
+
+/* Container with a cyberpunk neon glow */
+.container {
+    background: rgba(20, 20, 20, 0.9);
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.3);
+    text-align: center;
+    width: 350px;
+    position: relative;
+    overflow: hidden;
+    border: 2px solid rgba(0, 255, 255, 0.5);
+    animation: floatEffect 3s ease-in-out infinite;
+}
+
+/* Floating glow animation */
+@keyframes floatEffect {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-5px);
+    }
+}
+
+/* Title with a cyber-style glow */
+h2 {
+    font-size: 22px;
+    margin-bottom: 15px;
+    margin-top: 15px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: cyan;
+    text-shadow: 0 0 10px cyan;
+}
+
+/* Input fields with animated borders */
+input {
+    width: 100%;
+    padding: 12px;
+    margin: 12px 0;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+    background: rgba(255, 255, 255, 0.1);
+    color: cyan;
+    font-size: 16px;
+    transition: 0.3s;
+    border: 2px solid transparent;
+}
+
+/* Neon effect on focus */
+input:focus {
+    border-color: cyan;
+    box-shadow: 0 0 10px cyan;
+}
+
+/* Buttons with a neon glow effect */
+button {
+    width: 100%;
+    padding: 16px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    background: linear-gradient(90deg, cyan, blue);
+    color: black;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 0 10px cyan;
+}
+
+button:hover {
+    background: linear-gradient(90deg, blue, cyan);
+    transform: scale(1.05);
+    box-shadow: 0 0 15px cyan;
+}
+
+/* Error / success messages with fading animation */
+p#message {
+    margin-top: 10px;
+    font-size: 14px;
+    color: rgba(255, 100, 100, 0.9);
+    text-shadow: 0 0 5px red;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+/* Fade-in effect */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive adjustments */
+@media (max-width: 400px) {
+    .container {
+        width: 90%;
+        padding: 30px;
+    }
+}

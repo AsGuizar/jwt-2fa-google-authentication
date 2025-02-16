@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login con Hashing</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Registro</h2>
+        <input type="text" id="register-username" placeholder="Usuario">
+        <input type="password" id="register-password" placeholder="Contraseña">
+        <button onclick="register()">Registrarse</button>
+
+        <h2>Iniciar Sesión</h2>
+        <input type="text" id="login-username" placeholder="Usuario">
+        <input type="password" id="login-password" placeholder="Contraseña">
+        <button onclick="login()">Ingresar</button>
+
+        <p id="message"></p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
