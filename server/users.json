@@ -1,17 +1,1 @@
-[
-  {
-    "username": "1",
-    "salt": "26234e99fd45112afe49a5409ccb9de1",
-    "hash": "7c985f695fd6f36589827013c7a3247b838a10348491d4552b02401a466b399c"
-  },
-  {
-    "username": "2",
-    "salt": "f0e86785ef25078312c3b470cd2d4bc2",
-    "hash": "48aae6f09319b53ae306d8a3ac81f72f6ad2c9b5c2663177b6ff3b35eceac828"
-  },
-  {
-    "username": "3",
-    "salt": "0dd5ed7de9cda8a4aacab8657588e2cd",
-    "hash": "eaaacf9499e39e33d5de40b16611c47fb203d495f4cafc2398e10c508638a88f"
-  }
-]
+[]
