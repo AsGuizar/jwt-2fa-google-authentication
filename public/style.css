@@ -116,6 +116,69 @@ p#message {
     }
 }
 
+/* Estilos para los mensajes */
+.message {
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 4px;
+    text-align: center;
+}
+
+.message.error {
+    background-color: #ffebee;
+    color: #c62828;
+    border: 1px solid #ef9a9a;
+}
+
+.message.success {
+    background-color: #e8f5e9;
+    color: #2e7d32;
+    border: 1px solid #a5d6a7;
+}
+
+.message.info {
+    background-color: #e3f2fd;
+    color: #1565c0;
+    border: 1px solid #90caf9;
+}
+
+/* Estilos para la sección 2FA */
+#setup-2fa {
+    margin-top: 20px;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: #f5f5f5;
+}
+
+#setup-2fa img {
+    display: block;
+    margin: 10px auto;
+    max-width: 200px;
+}
+
+#setup-2fa p {
+    margin: 10px 0;
+    word-break: break-all;
+}
+
+#2fa-input {
+    margin-top: 15px;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: #f5f5f5;
+}
+
+/* Estilos para el código secreto */
+#secret-key {
+    font-family: monospace;
+    background-color: #fff;
+    padding: 5px;
+    border-radius: 3px;
+    border: 1px solid #ddd;
+}
+
 /* Responsive adjustments */
 @media (max-width: 400px) {
     .container {

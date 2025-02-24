@@ -3,21 +3,125 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login con Hashing</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Sistema de Autenticación</title>
+    <style>
+        body {
+            background-color: #0a0a0a;
+            color: #00fff2;
+            font-family: 'Arial', sans-serif;
+        }
+
+        .container {
+            max-width: 400px;
+            margin: 20px auto;
+            padding: 20px;
+            border: 2px solid #00fff2;
+            border-radius: 10px;
+            box-shadow: 0 0 10px #00fff2;
+        }
+
+        h2 {
+            color: #00fff2;
+            text-align: center;
+            text-shadow: 0 0 5px #00fff2;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            background-color: #1a1a1a;
+            border: 1px solid #00fff2;
+            border-radius: 5px;
+            color: #00fff2;
+            box-shadow: 0 0 5px #00fff2;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            background: linear-gradient(45deg, #00fff2, #0066ff);
+            border: none;
+            border-radius: 5px;
+            color: black;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        button:hover {
+            box-shadow: 0 0 15px #00fff2;
+        }
+
+        #setup-2fa {
+            margin-top: 20px;
+            padding: 15px;
+            border: 1px solid #00fff2;
+            border-radius: 5px;
+            background-color: #1a1a1a;
+            box-shadow: 0 0 10px #00fff2;
+        }
+
+        #qr-code {
+            display: block;
+            margin: 20px auto;
+            max-width: 200px;
+            border: 2px solid #00fff2;
+            border-radius: 10px;
+            box-shadow: 0 0 10px #00fff2;
+        }
+
+        #message {
+            text-align: center;
+            padding: 10px;
+            margin-top: 10px;
+            border-radius: 5px;
+            background-color: rgba(0, 255, 242, 0.1);
+        }
+
+        .secret-key {
+            background-color: #1a1a1a;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #00fff2;
+            font-family: monospace;
+            word-break: break-all;
+            margin: 10px 0;
+            text-align: center;
+        }
+    </style>
 </head>
 <body>
     <div class="container">
-        <h2>Registro</h2>
-        <input type="text" id="register-username" placeholder="Usuario">
-        <input type="password" id="register-password" placeholder="Contraseña">
-        <input type="password" id="register-confirm-password" placeholder="Confirmar Contraseña">
-        <button onclick="register()">Registrarse</button>
+        <h2>REGISTRO</h2>
+        <form id="registerForm" onsubmit="register(); return false;">
+            <input type="text" id="register-username" placeholder="Usuario" required>
+            <input type="password" id="register-password" placeholder="Contraseña" required>
+            <input type="password" id="register-confirm-password" placeholder="Confirmar Contraseña" required>
+            <button type="submit">REGISTRARSE</button>
+        </form>
 
-        <h2>Iniciar Sesión</h2>
-        <input type="text" id="login-username" placeholder="Usuario">
-        <input type="password" id="login-password" placeholder="Contraseña">
-        <button onclick="login()">Ingresar</button>
+        <div id="setup-2fa" style="display: none;">
+            <h3 style="text-align: center;">CONFIGURAR AUTENTICACIÓN 2FA</h3>
+            <img id="qr-code" alt="QR Code para Google Authenticator">
+            <p style="text-align: center;">CLAVE SECRETA:</p>
+            <div class="secret-key">
+                <span id="secret-key"></span>
+            </div>
+            <input type="text" id="2fa-token" placeholder="Código de verificación" maxlength="6">
+            <button onclick="verify2FA()">VERIFICAR Y ACTIVAR 2FA</button>
+        </div>
+
+        <h2>INICIAR SESIÓN</h2>
+        <form id="loginForm" onsubmit="login(); return false;">
+            <input type="text" id="login-username" placeholder="Usuario" required>
+            <input type="password" id="login-password" placeholder="Contraseña" required>
+            <div id="2fa-input" style="display: none;">
+                <input type="text" id="2fa-login-token" placeholder="Código Google Authenticator" maxlength="6">
+            </div>
+            <button type="submit">INGRESAR</button>
+        </form>
 
         <p id="message"></p>
     </div>
