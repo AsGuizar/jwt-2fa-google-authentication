@@ -33,5 +33,12 @@
     "hash": "3b4be8d8e950f79f27b9dccc78aa6b22249b7cb7e804276157247b4526aa96d6",
     "twoFactorSecret": "MZTG4QSUJNSXGTDUPA4T6KCIENEXCPSSK5GCK22SOI4SU53UHRDA",
     "twoFactorEnabled": true
+  },
+  {
+    "username": "Diego",
+    "salt": "db890cd0dfe097505e0d99c0efc08f0b",
+    "hash": "9134e1337f7c9ec8481ef765b0efbcfc55a237d6857da97473246d8fa7801240",
+    "twoFactorSecret": "JVRH2IK5JBJG2MRDLJVUM6ZFGRPDIRSPEVEHINKAGRVSIWTRM5ZA",
+    "twoFactorEnabled": true
   }
 ]
